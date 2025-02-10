@@ -3,7 +3,6 @@ import { GeneratorService } from "@services/generator-service";
 
 export const generateCode = async() => {
     try {           
-        console.log("CONTROLLER")
         let data:MainData = {
           name: "test",
           fieldsList: [
@@ -25,9 +24,8 @@ export const generateCode = async() => {
           ],
           language: 1 
         }
-          const generator = new GeneratorService(data).generate();
-          console.log(generator)
-          return generator                         
+        let response = new GeneratorService(data).generate();
+        return response                        
     } catch (error) {    
        
     }    
